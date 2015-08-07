@@ -1,6 +1,6 @@
 import json
 import random
-from bottledaemon import darmon_run
+from bottledaemon import daemon_run
 from bottle import run, route, request
 
 # remove private properties from json output
