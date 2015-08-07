@@ -1,5 +1,6 @@
 import json
 import random
+from bottledaemon import darmon_run
 from bottle import run, route, request
 
 # remove private properties from json output
@@ -77,4 +78,5 @@ def deal():
 	return deal.json()
 
 
-run(host='0.0.0.0', port=8080)
+if __name__ == "__main__":
+	daemon_run(host='0.0.0.0', port=8080)
