@@ -1,5 +1,6 @@
 import json
 import random
+from collections import OrderedDict
 from bottledaemon import daemon_run
 from bottle import run, route, request
 
@@ -15,7 +16,7 @@ class Card:
 	def __init__(self):
 		self._colname = 'BINGO'
 		self._line_step = 15
-		self.columns = dict()
+		self.columns = OrderedDict()
 		self._randomize()
 
 	# fulfill one line of values
@@ -37,13 +38,11 @@ class Card:
 		count = 0
 		for l in self._colname:
 			# create each line of random numbers for this card
-			#self.columns.append( self._new_line(l) )
 			self.columns[l] = self._new_line(count)
 			# -1 the value of center position
 			if (l == 'N'):
 				self.columns[l][2] = -1
 			count += 1
-
 
 # deal to manage all cards requested by client
 class Deal:
@@ -61,7 +60,7 @@ class Deal:
 
 	# return the json representation of the deal
 	def json(self):
-		return json.dumps(self, default=default_json, sort_keys=True, indent=4)
+		return json.dumps(self, default=default_json, sort_keys=False, indent=4)
 
 
 # deal service
