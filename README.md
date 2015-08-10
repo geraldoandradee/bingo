@@ -8,9 +8,13 @@ Check the API for details.
 ## Tech
 
 The service was built on Python and uses BottlePy (http://bottlepy.org/) to provide the web service.
+
 It is also self-contained into a Docker repository that can be found at:
+
 https://hub.docker.com/r/comdias/bingo-dock/
+
 Project for the Docker Repo:
+
 https://github.com/comdias/bingo-dock
 
 ## API
